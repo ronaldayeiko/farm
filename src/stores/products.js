@@ -6,7 +6,7 @@ export const useProductsStore = defineStore('products',  {
         const products= {
             0:{
                 id: 1,
-                name: "Tomato",
+                name: "Pumpkin",
                 category: "Fruit",
                 price: 200,
                 availability: true,
@@ -14,7 +14,7 @@ export const useProductsStore = defineStore('products',  {
             },
             1:{
                 id:2,
-                name:"tomato",
+                name:"Cherry",
                  category: "Vegetable",
                 price: 400,
                 availability: true,
@@ -31,7 +31,7 @@ export const useProductsStore = defineStore('products',  {
             },
             3:{
                 id:4,
-                name:"tomato",
+                name:"strabery",
                 category: "Fruit",
                 price: 200,
                 availability: true,
@@ -39,7 +39,7 @@ export const useProductsStore = defineStore('products',  {
             },
             4:{
                 id:5,
-                name:"tomato",
+                name:"Avacado",
                 category: "Fruit",
                 price: 200,
                 availability: true,
@@ -63,7 +63,7 @@ export const useProductsStore = defineStore('products',  {
             },
             7:{
                 id:9,
-                name:"tomato",
+                name:"Carrot",
                 category: "Fruit",
                 price: 200,
                 availability: true,
@@ -71,7 +71,7 @@ export const useProductsStore = defineStore('products',  {
             },
             8:{
                 id:10,
-                name:"tomato",
+                name:"Mango",
                 category: "Fruit",
                 price: 200,
                 availability: true,
@@ -79,31 +79,25 @@ export const useProductsStore = defineStore('products',  {
             },
             9:{
                 id:11,
-                name:"tomato",
+                name:"Apples",
                 category: "Fruit",
                 price: 200,
                 availability: true,
                 image: 'sample1 (9).jpg'
             },
-            10:{
-                id:12,
-                name:"tomato",
-                category: "Fruit",
-                price: 260,
-                availability: true,
-                image: 'sample1 (5).jpg'
-            },
+          
            
-
-
         }
+        const selectedProduct = ref(null)
        
         return{
-            products
+            products,selectedProduct
         }
    },
    actions:{
-       
+       updateSelectedProduct (payload) {
+        this.selectedProduct =payload
+       },
    },
    persist: true,
 })
